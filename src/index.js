@@ -5,6 +5,7 @@ import legoCharacter from './components/LegoCharacter/legoCharacter';
 
 const initializeApp = () => {
   legoCharacter.bindDisplays();
+  legoCharacter.headEvent();
 };
 
 initializeApp();

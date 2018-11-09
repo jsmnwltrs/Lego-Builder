@@ -3,16 +3,6 @@ import $ from 'jquery';
 // import './index.scss';
 import partsData from '../../data/partsData';
 
-const getNextPart = (partId) => {
-  
-}
-
-const bindEvents = (divId) => {
-  $(divId).on('click', '.part', (e) => {
-    const partIClicked = $(e.target).closest('.part').attr('id');
-    getNextPart(partIClicked);
-  });
-};
 
 const stringBuilder = (part, divId) => {
   let domString = '';
@@ -22,11 +12,29 @@ const stringBuilder = (part, divId) => {
   $(divId).html(domString);
 };
 
+const loadNextHead = () => {
+  partsData.getNextHead()
+    .then((nextHead) => {
+      console.log(nextHead);
+      stringBuilder(nextHead, '#heads');
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+
+const headEvent = () => {
+  $('#head').on('click', '.part', () => {
+    loadNextHead();
+  });
+};
+
+
 const initialHeadDisplay = () => {
   partsData.initializeData()
     .then((data) => {
       stringBuilder(data.data.heads[0], '#head');
-      console.log(data.data.heads);
     })
     .catch((error) => {
       console.error(error);
@@ -37,7 +45,6 @@ const initialTorsoDisplay = () => {
   partsData.initializeData()
     .then((data) => {
       stringBuilder(data.data.torsos[0], '#torso');
-      console.log(data.data.torsos);
     })
     .catch((error) => {
       console.error(error);
@@ -48,7 +55,6 @@ const initialLegsDisplay = () => {
   partsData.initializeData()
     .then((data) => {
       stringBuilder(data.data.legs[0], '#legs');
-      console.log(data.data.legs);
     })
     .catch((error) => {
       console.error(error);
@@ -61,4 +67,4 @@ const bindDisplays = () => {
   initialTorsoDisplay();
 };
 
-export default { bindDisplays };
+export default { bindDisplays, headEvent };
