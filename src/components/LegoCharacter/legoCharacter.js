@@ -4,10 +4,10 @@ import $ from 'jquery';
 import partsData from '../../data/partsData';
 
 
-const stringBuilder = (part, divId, nameDiv) => {
+const stringBuilder = (part, divId, nameDiv, imgClass) => {
   let domString = '';
   domString += `<div class='part' id='${part.id}'>
-    <img src='${part.imageUrl}'>
+    <img class="${imgClass}" src='${part.imageUrl}'>
     </div>`;
   $(divId).html(domString);
   $(nameDiv).html(`${part.name}`);
@@ -16,7 +16,7 @@ const stringBuilder = (part, divId, nameDiv) => {
 const loadNextHead = () => {
   partsData.getNextHead()
     .then((nextHead) => {
-      stringBuilder(nextHead[0], '#head', '#headName');
+      stringBuilder(nextHead[0], '#head', '#headName', 'head');
     })
     .catch((error) => {
       console.error(error);
@@ -32,7 +32,7 @@ const headEvent = () => {
 const loadNextTorso = () => {
   partsData.getNextTorso()
     .then((nextTorso) => {
-      stringBuilder(nextTorso[0], '#torso', '#torsoName');
+      stringBuilder(nextTorso[0], '#torso', '#torsoName', 'torso');
     })
     .catch((error) => {
       console.error(error);
@@ -48,7 +48,7 @@ const torsoEvent = () => {
 const loadNextLegs = () => {
   partsData.getNextLegs()
     .then((nextLegs) => {
-      stringBuilder(nextLegs[0], '#legs', '#legsName');
+      stringBuilder(nextLegs[0], '#legs', '#legsName', 'legs');
     })
     .catch((error) => {
       console.error(error);
@@ -64,7 +64,7 @@ const legsEvent = () => {
 const initialHeadDisplay = () => {
   partsData.initializeData()
     .then((data) => {
-      stringBuilder(data.data.heads[0], '#head', '#headName');
+      stringBuilder(data.data.heads[0], '#head', '#headName', 'head');
     })
     .catch((error) => {
       console.error(error);
@@ -74,7 +74,7 @@ const initialHeadDisplay = () => {
 const initialTorsoDisplay = () => {
   partsData.initializeData()
     .then((data) => {
-      stringBuilder(data.data.torsos[0], '#torso', '#torsoName');
+      stringBuilder(data.data.torsos[0], '#torso', '#torsoName', 'torso');
     })
     .catch((error) => {
       console.error(error);
@@ -84,7 +84,7 @@ const initialTorsoDisplay = () => {
 const initialLegsDisplay = () => {
   partsData.initializeData()
     .then((data) => {
-      stringBuilder(data.data.legs[0], '#legs', '#legsName');
+      stringBuilder(data.data.legs[0], '#legs', '#legsName', 'legs');
     })
     .catch((error) => {
       console.error(error);
