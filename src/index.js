@@ -6,6 +6,8 @@ import legoCharacter from './components/LegoCharacter/legoCharacter';
 const initializeApp = () => {
   legoCharacter.bindDisplays();
   legoCharacter.headEvent();
+  legoCharacter.torsoEvent();
+  legoCharacter.legsEvent();
 };
 
 initializeApp();

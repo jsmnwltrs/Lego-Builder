@@ -16,13 +16,12 @@ const loadNextHead = () => {
   partsData.getNextHead()
     .then((nextHead) => {
       console.log(nextHead);
-      stringBuilder(nextHead, '#heads');
+      stringBuilder(nextHead[0], '#head');
     })
     .catch((error) => {
       console.error(error);
     });
 };
-
 
 const headEvent = () => {
   $('#head').on('click', '.part', () => {
@@ -30,6 +29,39 @@ const headEvent = () => {
   });
 };
 
+const loadNextTorso = () => {
+  partsData.getNextTorso()
+    .then((nextTorso) => {
+      console.log(nextTorso);
+      stringBuilder(nextTorso[0], '#torso');
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+const torsoEvent = () => {
+  $('#torso').on('click', '.part', () => {
+    loadNextTorso();
+  });
+};
+
+const loadNextLegs = () => {
+  partsData.getNextLegs()
+    .then((nextLegs) => {
+      console.log(nextLegs);
+      stringBuilder(nextLegs[0], '#legs');
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+const legsEvent = () => {
+  $('#legs').on('click', '.part', () => {
+    loadNextLegs();
+  });
+};
 
 const initialHeadDisplay = () => {
   partsData.initializeData()
@@ -67,4 +99,6 @@ const bindDisplays = () => {
   initialTorsoDisplay();
 };
 
-export default { bindDisplays, headEvent };
+export default {
+  bindDisplays, headEvent, torsoEvent, legsEvent,
+};
