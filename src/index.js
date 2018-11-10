@@ -1,7 +1,13 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 import 'bootstrap';
 import './index.scss';
+import legoCharacter from './components/LegoCharacter/legoCharacter';
 
-$('#test').click(() => {
-  $('#div').append('<p>Hey there</p>');
-});
+const initializeApp = () => {
+  legoCharacter.bindDisplays();
+  legoCharacter.headEvent();
+  legoCharacter.torsoEvent();
+  legoCharacter.legsEvent();
+};
+
+initializeApp();
