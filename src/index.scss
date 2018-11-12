@@ -1,5 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
+@import './styles/variables';
+
+h1{
+  @include justify-content();
+  margin-top: 30px;
+  margin-bottom: 40px;
+  color: $text-color;
+  text-shadow: $text-shadow;
+  font-size: $font-size;
+}
 
 body {
-  background-color: blueviolet;
+  background-image: url(http://www.motherslovetifton.com/wp-content/uploads/2015/07/texture-lego-blue-1600x800.png);
 }

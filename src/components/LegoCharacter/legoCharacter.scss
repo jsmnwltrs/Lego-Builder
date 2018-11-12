@@ -1,1 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
+@import "../../styles/variables";
+
+#name {
+  @include justify-content();
+  color: $text-color;
+  text-shadow: $text-shadow;
+}
+
+.part {
+  @include justify-content(); 
+
+  .head, .torso, .legs, {
+    @include image-size();
+  }
+}
