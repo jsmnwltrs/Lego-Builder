@@ -4,9 +4,9 @@ h1 {
   @include justify-content();
   margin-top: 30px;
   margin-bottom: 40px;
-  color: white !important;
+  color: $text-color !important;
   text-shadow: $text-shadow;
-  font-size: 75px !important;
+  font-size: $text-size !important;
 }
 
 body {

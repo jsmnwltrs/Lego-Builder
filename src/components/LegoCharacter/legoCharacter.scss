@@ -1,4 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
 @import "../../styles/variables";
 
 #name {
@@ -11,6 +10,6 @@
   @include justify-content(); 
 
   .head, .torso, .legs, {
-    @include image-size();
+    @include image-size(); 
   }
 }

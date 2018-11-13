@@ -1,6 +1,4 @@
 import $ from 'jquery';
-// import 'bootstrap';
-// import './index.scss';
 import partsData from '../../data/partsData';
 import './legoCharacter.scss';
 
