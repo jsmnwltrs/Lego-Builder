@@ -1,13 +1,12 @@
-@import "~bootstrap/scss/bootstrap";
 @import './styles/variables';
 
-h1{
+h1 {
   @include justify-content();
   margin-top: 30px;
   margin-bottom: 40px;
-  color: $text-color;
+  color: white !important;
   text-shadow: $text-shadow;
-  font-size: $font-size;
+  font-size: 75px !important;
 }
 
 body {

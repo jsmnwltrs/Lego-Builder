@@ -8,7 +8,7 @@ const addSavedCharacter = (characterObject) => {
   let domString = '';
   domString += `<div class="card" style="width: 18rem;">
   <div class="card-title">
-  <h5 class="card-title">${characterObject.name}</h5>
+  <h3 class="card-title">${characterObject.name}</h3>
   </div>
   <div class="card-body">
     <img class="savedHead" src="${characterObject.headImage}" alt="head">
