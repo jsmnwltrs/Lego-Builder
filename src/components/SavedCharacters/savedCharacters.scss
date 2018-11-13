@@ -1,1 +1,39 @@
 @import "~bootstrap/scss/bootstrap";
+@import '../../styles/variables';
+
+#button {
+  @include justify-content();
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}
+
+#savedCharacters{
+  @include flex-wrap();
+
+  .card { 
+    margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+    margin-left: $margin-left;
+    background-image: url(https://images.wallpaperscraft.ru/image/lego_tochki_krugi_zheltyy_9721_2560x1080.jpg);
+  
+    .card-title {
+      @include justify-content();
+      color: $text-color;
+      text-shadow: $text-shadow;
+    }
+  
+    .card-body {
+      @include justify-content();
+      padding: 0;
+    }
+    
+    .savedHead, .savedTorso, .savedLegs {
+      @include saved-image-size();
+    }
+  
+  }
+}
+
+.savedLegs {
+  margin-bottom: $margin-bottom;
+}

@@ -1,15 +1,23 @@
 import $ from 'jquery';
-// import 'bootstrap';
-// import './index.scss';
+import 'bootstrap';
+import '../../index.scss';
+import './savedCharacters.scss';
+
 
 const addSavedCharacter = (characterObject) => {
   let domString = '';
   domString += `<div class="card" style="width: 18rem;">
+  <div class="card-title">
+  <h3 class="card-title">${characterObject.name}</h3>
+  </div>
   <div class="card-body">
-    <h5 class="card-title">${characterObject.name}</h5>
-    <img src="${characterObject.headImage}" alt="head">
-    <img src="${characterObject.torsoImage}" alt="torso">
-    <img src="${characterObject.legsImage}" alt="legs">
+    <img class="savedHead" src="${characterObject.headImage}" alt="head">
+  </div>
+  <div class="card-body">
+    <img class="savedTorso" src="${characterObject.torsoImage}" alt="torso">
+  </div>
+  <div class="card-body">
+    <img class="savedLegs" src="${characterObject.legsImage}" alt="legs">
  </div>
 </div>`;
   $('#savedCharacters').append(domString);
